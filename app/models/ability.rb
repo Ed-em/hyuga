@@ -17,9 +17,6 @@ class Ability
     if user.superadmin_role?
       can :manage, :all
     end
-    if user.contributor_role?
-      can :manage, Movie
-    end
     if user.user_role?
       can :manage, Movie
     end

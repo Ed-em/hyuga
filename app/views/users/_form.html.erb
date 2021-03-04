@@ -1,0 +1,26 @@
+<%= form_for @user, html: { multipart: true } do |form| %>
+  <% if movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= movie.errors.count %> are the errors.</h2>
+      <ul>
+      <% movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
