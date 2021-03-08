@@ -1,4 +1,9 @@
 class Movie < ApplicationRecord
+  validates :title, presence: true
+  validates :playtime, presence: true
+  validates :director, presence: true
+  validates :description, presence: true
+  validates :movie_img, presence: true
   belongs_to :user
   belongs_to :genre
   has_many :reviews
