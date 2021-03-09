@@ -47,3 +47,4 @@ gem 'cancancan'
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 gem 'binding_of_caller'
 gem 'kaminari'
+gem 'rails_12factor', group: :production
