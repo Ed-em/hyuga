@@ -7,7 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/raty/3.0.0/jquery.raty.min.js', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/raty/3.0.0/jquery.raty.js', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -65,6 +65,7 @@
 
             <% if signed_in? %>
               <li><%= link_to "Profile", user_path(current_user.id) %></li>
+              <li><%= link_to "Add Genre", new_genre_path %></li>
 
     					<li><%= link_to "Add Movie", new_movie_path %></li>
               <% if current_user.superadmin_role? %>
@@ -84,6 +85,6 @@
 
       <div class="container">
     		<%= yield %>
-    	</div>	
+    	</div>
   </body>
 </html>
