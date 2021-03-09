@@ -2,7 +2,7 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-4">
-        <%= image_tag @movie.movie_img.url(:movie_show)%>
+        <%= image_tag @movie.movie_img.url(:movie_image), class: 'movie_show'%>
         <div class="table-responsive">
                 <table class="table">
                   <tbody>
@@ -31,28 +31,30 @@
                   <% end %>
               </div>
             </div>
+
             <div class="col-md-7 col-md-offset-1">
-            <h1 class="review_title"><%= @movie.title %></h1>
-            <p><%= @movie.description %></p>
-            <div class="average-review-rating" data-score = <%= @average_review %>></div>
-            <span class="number-of-reviews">Based on <%= @movie.reviews.count %> reviews</span>
-            <div>
-              <%= link_to "Add Review", new_movie_review_path(@movie), class: "btn-custom" %>
-            </div>
-            <div class="row">
-            <div class="reviews">
-               <% if @movie.reviews.blank? %>
-                <h3>No reviews just yet, would you like to add the first!</h3>
-                <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
-              <% else %>
-                <h3>Reviews</h3>
-          			<%= render @movie.reviews %>
-              <% end %>
-            </div>
+              <div class="row">
+              <div class="movie-info">
+                <h1 class="review_title"><%= @movie.title %></h1>
+                <p><%= @movie.description %></p>
+                <div class="average-review-rating" data-score = <%= @average_review %>></div>
+                <span class="number-of-reviews">Based on <%= @movie.reviews.count %> reviews</span>
+              </div>
+              </div>
+
+              <div class="row">
+                <div class="reviews">
+                  <h3>Reviews</h3>
+                  <br>
+                    <p><%= link_to "Add Review", new_movie_review_path(@movie), class: "btn-custom" %></p>
+                    <br>
+              			   <%= render @movie.reviews %>
+                </div>
+              </div>
+
           </div>
         </div>
       </div>
-    </div>
 
   <script>
   	$('.review-rating').raty({

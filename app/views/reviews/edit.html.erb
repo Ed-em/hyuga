@@ -4,12 +4,19 @@
 
 		<h1>Edit Review</h1>
 
-		<%= simple_form_for([@movie, @review]) do |f| %>
+		<%= form_for([@movie, @review]) do |f| %>
 			<div id="rating-form">
 				<label>Rating</label>
 			</div>
-			<%= f.input :comment %>
-			<%= f.button :submit, :class => "btn-custom2" %>
+			<div class="from-group">
+				<%= f.label :comment %>
+				<%= f.text_area :comment, class: 'form-control' %>
+			</div>
+			<p>
+				<div class="actions">
+				<%= f.button :submit, :class => "btn-custom2" %>
+			</div>
+			
 		<% end %>
 
 	</div>

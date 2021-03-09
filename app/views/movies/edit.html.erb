@@ -1,40 +1,38 @@
+<div class="col-md-6 col-md-offset-3">
+
+	<div class="new-movie-form">
 <h1>Editing Movie</h1>
 
 <%= simple_form_for @movie, :html => { :multipart => true } do |form| %>
 
-  <div>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="form-group">
+   <%= form.label :title %>
+   <%= form.text_field :title, class: 'form-control' %>
+
+   <%= form.label :genre %>
+   <%= select_tag(:genre_id, options_for_select(@genres), class: 'form-control', :prompt => "Select a genre") %>
+
+   <%= form.label :playtime %>
+   <%= form.number_field :playtime, class: 'form-control' %>
+
+   <%= form.label :director %>
+   <%= form.text_field :director, class: 'form-control' %>
+
+   <%= form.label :description %>
+   <%= form.text_area :description, class: 'form-control' %>
+
+   <%= form.label :movie_img %>
+   <%= form.file_field :movie_img %>
   </div>
 
-  <div>
-    <%= select_tag(:genre_id, options_for_select(@genres), :promt => "Select a genre") %>
-  </div>
-
-  <div>
-    <%= form.label :playtime %>
-    <%= form.number_field :playtime %>
-  </div>
-
-  <div>
-    <%= form.label :director %>
-    <%= form.text_field :director %>
-  </div>
-
-  <div>
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.label :movie_img %>
-    <%= form.file_field :movie_img %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+  <div class="actions">
+   <%= form.submit %>
+ </div>
 <% end %>
 
 <%= link_to 'Show', @movie %> |
 <%= link_to 'Back', movies_path %>
+
+</div>
+
+</div>
