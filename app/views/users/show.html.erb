@@ -1,5 +1,6 @@
-<%= @user.name %>
-<%= @user.username %>
-<%= @user.email %>
-<%= link_to "Add name and username", edit_user_path %>
-<%= link_to "Update account details", edit_user_registration_path %>
+<h3>My Profile</h3>
+<h5><b>Name:</b> <%= @user.name %></h5>
+<h5><b>Username:</b> <%= @user.username %></h5>
+<h5><b>Email:</b> <%= @user.email %></h5>
+<p><%= link_to "Add name and username", edit_user_path %></p>
+<p><%= link_to "Update account details", edit_user_registration_path %></p>
