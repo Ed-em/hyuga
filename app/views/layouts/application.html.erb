@@ -61,7 +61,6 @@
 						<% end %>
 					</ul>
 				</li>
-
             <% if signed_in? %>
               <li><%= link_to "Profile", user_path(current_user.id) %></li>
               <li><%= link_to "Add Genre", new_genre_path %></li>
