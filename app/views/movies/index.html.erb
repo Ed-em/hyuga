@@ -2,14 +2,14 @@
 
 <% if @movies.count == 0 %>
 
-	<h1>There are no books currently in this category</h1>
+	<h1>There are no movies currently in this category</h1>
 
 <% else %>
 
 	<div class="row">
 
 		<% @movies.each do |movie| %>
-    <#% if movie.status == "published" %>
+    <% if movie.status == "published" %>
 
 			<div class="col-md-3">
 				<a href="/movies/<%= movie.id %>">
@@ -22,6 +22,6 @@
 
 	</div>
 
-<#% end %>
+<% end %>
 <br>
 <%= paginate @movies %>
