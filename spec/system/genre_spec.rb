@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe 'Restaurant review function', type: :system do
+RSpec.describe 'Genre function', type: :system do
 
   describe 'Create genre function' do
     before do
@@ -14,7 +14,7 @@ RSpec.describe 'Restaurant review function', type: :system do
     end
     context 'to be able to login' do
       it 'enables create new genre' do
-        click_on 'Add Genre'
+        visit new_genre_path
         fill_in 'Name', with: 'Comedy'
         click_on 'Create Genre'
         expect(page).to have_content 'Comedy'
@@ -37,9 +37,10 @@ RSpec.describe 'Restaurant review function', type: :system do
       it 'enables edit new genre' do
         Genre.create(name: 'Action')
         @genre = Genre.first
-        visit edit_genre_path
+        visit genres_path
+        click_on 'Edit'
         fill_in 'Name', with: 'Comedy'
-        click_button 'Update genre'
+        click_button 'Update Genre'
         expect(page).to have_content 'genre was successfully updated.'
       end
     end
@@ -80,7 +81,7 @@ RSpec.describe 'Restaurant review function', type: :system do
         Genre.create(name: 'Action')
         @genre = Genre.first
         visit genres_path
-        click_on 'Delete'
+        click_on 'Destroy'
       end
     end
   end

@@ -9,7 +9,7 @@
 	<div class="row">
 
 		<% @movies.each do |movie| %>
-    <% if movie.status == "published" %>
+    <#% if movie.status == "published" %>
 
 			<div class="col-md-3">
 				<a href="/movies/<%= movie.id %>">
@@ -22,6 +22,6 @@
 
 	</div>
 
-<% end %>
+<#% end %>
 <br>
 <%= paginate @movies %>
